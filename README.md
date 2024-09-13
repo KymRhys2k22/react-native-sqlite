@@ -1,4 +1,4 @@
-# React Native with SQLite
+# React Native Menu App Documentation
 
 ## Overview
 
@@ -122,3 +122,5 @@ This documentation provides a comprehensive guide to understanding the React Nat
 ---
 
 Let me know if there's anything specific you'd like to add or adjust in the documentation!
+
+[contact me](mailto:kymrhys@gmail.com)
