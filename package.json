@@ -15,7 +15,8 @@
     "lodash.debounce": "*",
     "react": "18.2.0",
     "react-native": "0.74.3",
-    "react-native-paper": "4.9.2"
+    "react-native-paper": "4.9.2",
+    "react-native-uuid": "^2.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"

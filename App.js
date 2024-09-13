@@ -18,19 +18,21 @@ import {
 } from "./database";
 import Filters from "./components/Filters";
 import { getSectionListData, useUpdateEffect } from "./utils";
+import * as uuid from "react-native-uuid";
 
 const API_URL =
   "https://raw.githubusercontent.com/Meta-Mobile-Developer-PC/Working-With-Data-API/main/menu-items-by-category.json";
 const sections = ["Appetizers", "Salads", "Beverages"];
 
-const Item = ({ key, title, price }) => (
-  <View key={key} style={styles.item}>
+const Item = ({ title, price }) => (
+  <View style={styles.item}>
     <Text style={styles.title}>{title}</Text>
     <Text style={styles.title}>${price}</Text>
   </View>
 );
 
 export default function App() {
+  const uuidv3 = uuid.v3;
   const [data, setData] = useState([]);
   const [searchBarText, setSearchBarText] = useState("");
   const [query, setQuery] = useState("");
@@ -141,13 +143,9 @@ export default function App() {
       <SectionList
         style={styles.sectionList}
         sections={data}
-        keyExtractor={({ item }, idx) => item + idx}
+        keyExtractor={uuid.v4}
         renderItem={({ item }) => (
-          <Item
-            key={item.id + item.title}
-            title={item.title}
-            price={item.price}
-          />
+          <Item title={item.title} price={item.price} />
         )}
         renderSectionHeader={({ section: { title } }) => (
           <Text style={styles.header}>{title}</Text>
